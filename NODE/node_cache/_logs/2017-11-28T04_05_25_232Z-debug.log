@@ -1,0 +1,43 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'babel-loader',
+1 verbose cli   'babel-core',
+1 verbose cli   'babel-preset-es2015',
+1 verbose cli   'babel-preset-react',
+1 verbose cli   '—save-dev' ]
+2 info using npm@5.5.1
+3 info using node@v8.9.1
+4 verbose npm-session 456a79592852b9f7
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData error for babel-loader@^7.1.2 install babel-loader babel-core babel-preset-es2015 babel-preset-react —save-dev is not a legal HTTP header value
+8 silly fetchPackageMetaData error for babel-core@^6.26.0 install babel-loader babel-core babel-preset-es2015 babel-preset-react —save-dev is not a legal HTTP header value
+9 silly fetchPackageMetaData error for babel-preset-es2015@latest install babel-loader babel-core babel-preset-es2015 babel-preset-react —save-dev is not a legal HTTP header value
+10 silly fetchPackageMetaData error for babel-preset-react@latest install babel-loader babel-core babel-preset-es2015 babel-preset-react —save-dev is not a legal HTTP header value
+11 verbose stack Error: Invalid tag name "—save-dev": Tags may not have any characters that encodeURIComponent encodes.
+11 verbose stack     at invalidTagName (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:76:15)
+11 verbose stack     at fromRegistry (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:265:13)
+11 verbose stack     at resolve (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:66:12)
+11 verbose stack     at npa (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:39:10)
+11 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install\deps.js:203:14
+11 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:35
+11 verbose stack     at Array.forEach (<anonymous>)
+11 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:11
+11 verbose stack     at Array.forEach (<anonymous>)
+11 verbose stack     at asyncMap (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:51:8)
+11 verbose stack     at exports.getAllMetadata (C:\Program Files\nodejs\node_modules\npm\lib\install\deps.js:200:3)
+11 verbose stack     at Installer.loadArgMetadata (C:\Program Files\nodejs\node_modules\npm\lib\install.js:325:3)
+11 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:656:16
+11 verbose stack     at BB.join.then (C:\Program Files\nodejs\node_modules\npm\lib\install\read-shrinkwrap.js:41:16)
+11 verbose stack     at tryCatcher (C:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\util.js:16:23)
+11 verbose stack     at Promise._settlePromiseFromHandler (C:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\promise.js:512:31)
+12 verbose cwd D:\codingIsFun\web\react\react_todo
+13 verbose Windows_NT 6.1.7601
+14 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "babel-loader" "babel-core" "babel-preset-es2015" "babel-preset-react" "—save-dev"
+15 verbose node v8.9.1
+16 verbose npm  v5.5.1
+17 error code EINVALIDTAGNAME
+18 error Invalid tag name "—save-dev": Tags may not have any characters that encodeURIComponent encodes.
+19 verbose exit [ 1, true ]

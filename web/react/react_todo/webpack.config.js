@@ -1,20 +1,21 @@
 'use strict';
-moudle.exports = {
+const path = require('path')
+module.exports = {
     entry: [
         "./src/entry.js"
     ],
     output: {
-        path: './out/',
+        path: path.resolve(__dirname, 'out'),
         filename: "bundle.js"
     },
     externals: {
         'react': 'React'
     },
-    moudle: {
+    module: {
         loaders: [
-            { test: /\.js$/, loader: "jsx!babel", include: /src/},
-            { test: /\.css$/, loader: "style!css"},
-            { test: /\.scss$/, loader: "style!css!sass"},
+            { test: /\.js$/, loader: "jsx-loader!babel-loader?presets[]=react,presets[]=es2015", include: /src/},
+            { test: /\.css$/, loader: "style-loader!css-loader"},
+            { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader"},
             { test: /\.(png|jpg)$/, loader: 'url?limit=8192'}       
         ]
     }
