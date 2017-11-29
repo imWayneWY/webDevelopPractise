@@ -1,5 +1,6 @@
 'use strict';
-const path = require('path')
+devtool : 'source-map';
+const path = require('path');
 module.exports = {
     entry: [
         "./src/entry.js"
@@ -9,7 +10,8 @@ module.exports = {
         filename: "bundle.js"
     },
     externals: {
-        'react': 'React'
+        'react': 'React',
+        'react-dom': 'ReactDOM'
     },
     module: {
         loaders: [

@@ -1,14 +1,19 @@
 'use strict';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import LocalDb from 'localDb';
 import TodoHeader from './TodoHeader.js';
 import TodoMain from './TodoMain.js';
 import TodoFooter from './TodoFooter.js';
 
-class App extends React.Componet {
+class App extends React.Component {
     constructor() { //定义App类的构造函数
         super();
         this.db = new LocalDb('ReactDemo');
+        this.state = { //定义组件状态
+            todos: this.db.get('todos') || [],
+            isAllChecked: false
+        }
     }
     // 判断是否所有任务的状态都完成，同步底部的全选框
     allChecked() {
@@ -62,8 +67,8 @@ class App extends React.Componet {
     render() {
         let info = {
             isAllChecked: this.state.isAllChecked,
-            todoCount: this.state.todo.length || 0,
-            todoDoneCount: (this.state.todos && this.state.todos.fliter((todo) => todo.isDone)).length || 0
+            todoCount: this.state.todos.length || 0,
+            todoDoneCount: (this.state.todos && this.state.todos.filter((todo) => todo.isDone)).length || 0
         };
         return (
             <div className="todo-wrap">
@@ -74,4 +79,4 @@ class App extends React.Componet {
         );
     }
 }
-React.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App></App>, document.getElementById('app'));
