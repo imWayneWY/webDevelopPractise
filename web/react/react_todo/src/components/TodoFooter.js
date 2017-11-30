@@ -19,3 +19,4 @@ class TodoFooter extends React.Component {
         )
     }
 }
+export default TodoFooter; 

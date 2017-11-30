@@ -75,8 +75,9 @@ class App extends React.Component {
                 <TodoHeader addTodo={this.addTodo.bind(this)} />
                 <TodoMain todos={this.state.todos} deleteTodo={this.deleteTodo.bind(this)} changeTodoState={this.changeTodoState.bind(this)} />
                 <TodoFooter {...info} changeTodoState={this.changeTodoState.bind(this)} chearDone={this.clearDone.bind(this)} />
-            </div>
+           </div>
         );
     }
 }
+
 ReactDOM.render(<App></App>, document.getElementById('app'));

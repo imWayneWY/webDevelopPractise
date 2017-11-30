@@ -1,3 +1,4 @@
+import TodoItem from "./TodoItem.js"
 class TodoMain extends React.Component {
     render() {
         if(this.props.todos.length == 0) {
@@ -18,3 +19,4 @@ class TodoMain extends React.Component {
         }
     }
 }
+export default TodoMain; 
