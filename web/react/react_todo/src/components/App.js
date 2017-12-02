@@ -9,7 +9,7 @@ import TodoFooter from './TodoFooter.js';
 class App extends React.Component {
     constructor() { //定义App类的构造函数
         super();
-        this.db = new LocalDb('ReactDemo');
+        this.db = new LocalDb('ReactDemo','Object');
         this.state = { //定义组件状态
             todos: this.db.get('todos') || [],
             isAllChecked: false
@@ -38,14 +38,14 @@ class App extends React.Component {
         this.setState({todos: this.state.todos}); //改变状态
         this.db.set("todos", this.state.todos);
     }
-    // 清楚已完成的任务，传递给Footer组件的方法
+    // 清除已完成的任务，传递给Footer组件的方法
     clearDone(){
-        let todos = this.state.todos.fliter(todo => !todo.isDone) //过滤掉数组中todo.isDone为true的item.
+        let todos = this.state.todos.filter(todo => !todo.isDone) //过滤掉数组中todo.isDone为true的item.
         this.setState({
             todos: todos,
             isAllChecked: false
         });
-        this.db,set('todos', todos);
+        this.db.set('todos', todos);
     }
     // 改变任务状态，传递给TodoItem和Footer组件的方法
     changeTodoState(index, isDone, isChangeAll=false){
@@ -74,7 +74,8 @@ class App extends React.Component {
             <div className="todo-wrap">
                 <TodoHeader addTodo={this.addTodo.bind(this)} />
                 <TodoMain todos={this.state.todos} deleteTodo={this.deleteTodo.bind(this)} changeTodoState={this.changeTodoState.bind(this)} />
-                <TodoFooter {...info} changeTodoState={this.changeTodoState.bind(this)} chearDone={this.clearDone.bind(this)} />
+                <TodoFooter {...info} clearDone={this.clearDone.bind(this)}  changeTodoState={this.changeTodoState.bind(this)}/>
+                
            </div>
         );
     }
