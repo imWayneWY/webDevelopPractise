@@ -1,2 +1,4 @@
-NODE\
-web\react\react_todo\
+/node_modules/
+/NODE/
+/web/react/react_resume/node_modules/
+/web/react/react_todo/node_modules/
